@@ -19,23 +19,29 @@
 </div>
 
 <!-- Popular movie -->
+<div class="row">
 <h3> Popular Movies</h3>
 <ul>
     {{ macro.displayMovieList(popular)}}
 </ul>
 <br>
 <hr>
+</div>
 <!-- Upcoming movie  -->
+<div class="row">
 <h3> Upcoming Movies </h3>
 <ul>
     {{ macro.displayMovieList(upcoming)}}
 </ul>
 <br>
+</div>
 <!-- Now showing movie -->
+<div class="row">
 <h3>Now Showing</h3>
 <ul>
     {{ macro.displayMovieList(now_playing)}}
 </ul>
+</div>
 
 
 {% endblock%}
