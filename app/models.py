@@ -55,7 +55,7 @@ class Review:
 
 class User(UserMixin,db.Model):
     __tablename__ = 'users'
-    
+    reviews = db.relationship('Review',backref = 'user',lazy = "dynamic")
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(255))
     email = db.Column(db.String(255),unique = True,index = True)
@@ -63,7 +63,6 @@ class User(UserMixin,db.Model):
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
     pass_secure = db.Column(db.String(255))
-    reviews = db.relationship('Review',backref = 'user',lazy = "dynamic")
     
     @property
     def password(self):
